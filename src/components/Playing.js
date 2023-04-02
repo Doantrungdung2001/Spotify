@@ -6,7 +6,7 @@ import 'react-h5-audio-player/lib/styles.css';
 function Playing() {
   return (
     <div>
-        <AudioPlayer src='' layout="horizontal" />
+        <AudioPlayer className='player-music' src='' showSkipControls={true} showJumpControls={false} layout="horizontal" />
     </div>
   );
 }

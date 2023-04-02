@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Songs } from '../Context'
 
 function ListSong() {
     const {DataSongs} = useContext(Songs)
-    console.log(DataSongs);
+    const [idSong,setidSong] = useState(0)
+    const handlePlaySong = (idSong) =>{
+        setidSong(idSong)
+    }
     return (
         <div className='col-span-2 overflow-y-scroll'>
             <table className='table-auto w-full'>
@@ -18,7 +21,11 @@ function ListSong() {
                 </thead>
                 <tbody>
                     {DataSongs.map((song,index) => (
-                        <tr key={index} className='bg-slate-800 h-12 text-gray-500 hover:bg-slate-400 hover:text-gray-800' >
+                        <tr 
+                            key={index} 
+                            className={`bg-slate-800 h-12 text-gray-500 hover:bg-slate-600 ${idSong === song.id && 'bg-slate-600 text-teal-400'}`} 
+                            onClick={() => handlePlaySong(song.id)} 
+                        >
                             <td className='text-center'>{index +1}</td>
                             <td>{song.name}</td>
                             <td className='text-center'>{song.author}</td>
