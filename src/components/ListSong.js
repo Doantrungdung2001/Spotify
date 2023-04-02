@@ -18,7 +18,7 @@ function ListSong() {
                 </thead>
                 <tbody>
                     {DataSongs.map((song,index) => (
-                        <tr key={index} className='bg-slate-800 h-12 text-gray-500 hover:bg-gray-400' >
+                        <tr key={index} className='bg-slate-800 h-12 text-gray-500 hover:bg-slate-400 hover:text-gray-800' >
                             <td className='text-center'>{index +1}</td>
                             <td>{song.name}</td>
                             <td className='text-center'>{song.author}</td>

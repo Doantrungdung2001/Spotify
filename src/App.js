@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import DetailSong from './components/DetailSong';
 import ListSong from './components/ListSong';
+import Playing from './components/Playing';
 import {Songs} from './Context';
 import DataSongs from './data/songs.json';
 function App() {
@@ -16,6 +17,7 @@ function App() {
           {/* Span 2 */}
           <ListSong />
         </div>
+        <Playing />
       </Songs.Provider>
     </div>
     
