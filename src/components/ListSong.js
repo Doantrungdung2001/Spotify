@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Songs } from '../Context'
 
 function ListSong() {
-    const {DataSongs} = useContext(Songs)
+    const {DataSongs,handleSetSong} = useContext(Songs)
     const [idSong,setidSong] = useState(0)
     const handlePlaySong = (idSong) =>{
         setidSong(idSong)
+        handleSetSong(idSong)
     }
     return (
         <div className='col-span-2 overflow-y-scroll'>
@@ -15,7 +16,7 @@ function ListSong() {
                         <th className='w-[10%]'>#</th>
                         <th className='text-left'>Titile</th>
                         <th className='w-[10%]'>Author</th>
-                        <th className='w-[10%]'><i className='fa fa-download'>d</i></th>
+                        <th className='w-[10%]'><i className='fa fa-download'></i></th>
 
                     </tr>
                 </thead>
@@ -29,7 +30,7 @@ function ListSong() {
                             <td className='text-center'>{index +1}</td>
                             <td>{song.name}</td>
                             <td className='text-center'>{song.author}</td>
-                            <td>1</td>
+                            <th className='w-[10%]'><i className='fa fa-download'></i></th>
                         </tr>
                     ))}
                     
